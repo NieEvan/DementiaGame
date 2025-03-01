@@ -1,0 +1,6 @@
+page {
+  background-color: #ffffff; /* Fallback color */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+} 

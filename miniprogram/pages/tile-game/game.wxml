@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="game-status">
+    <text>Level: {{level}}</text>
+    <text>Score: {{score}}</text>
+  </view>
+
+  <view class="grid-container">
+    <view class="grid" style="grid-template-columns: repeat({{gridSize}}, 1fr);">
+      <view 
+        wx:for="{{tiles}}" 
+        wx:key="index"
+        class="tile {{item.isLit ? 'lit' : ''}} {{item.isClicked ? 'clicked' : ''}} {{item.isError ? 'error' : ''}}"
+        data-index="{{index}}"
+        bindtap="onTileTap"
+      ></view>
+    </view>
+  </view>
+
+  <view class="message">{{gameMessage}}</view>
+
+  <!-- Game Over Overlay -->
+  <view class="game-over-overlay {{isGameOver ? 'visible' : ''}}">
+    <view class="game-over-text">
+      <text>Game Over!</text>
+      <text class="final-score">Final Score: {{finalScore}}</text>
+      <view class="game-over-buttons">
+        <button class="game-button replay" bindtap="restartGame">Play Again</button>
+        <button class="game-button home" bindtap="goHome">Home</button>
+      </view>
+    </view>
+  </view>
+</view> 

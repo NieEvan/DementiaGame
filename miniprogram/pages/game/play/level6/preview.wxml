@@ -1,0 +1,6 @@
+<canvas type="2d" id="previewCanvas" 
+  class="preview-canvas"
+  bindtouchstart="handleTouchStart"
+  bindtouchmove="handleTouchMove"
+  style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+<view class="countdown">{{countdown}}</view> 

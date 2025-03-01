@@ -1,0 +1,42 @@
+<view class="container">
+  <canvas type="2d" id="mazeCanvas" 
+    class="maze-canvas {{hideCanvas ? 'hidden' : ''}}"
+    bindtouchstart="touchStart"
+    bindtouchmove="touchMove" 
+    bindtouchend="touchEnd"></canvas>
+
+  <canvas type="2d" id="quizCanvas" 
+    class="quiz-canvas {{showComplete && !quiz.completed ? 'active' : ''}}"
+    bindtouchstart="handleQuizTouch"></canvas>
+  
+  
+  <!-- Level completion screen -->
+  <view class="complete-screen {{showComplete && quiz.completed ? 'active' : ''}}">
+    <view class="complete-content">
+      <text class="complete-title">Level Complete!</text>
+      <view class="complete-buttons">
+        <button class="complete-button back-button" bindtap="navigateBack">
+          <image class="button-image" src="/pages/game/materials/menu.png" mode="aspectFit"></image>
+        </button>
+        <button class="complete-button restart-button" bindtap="restartGame">
+          <image class="button-image" src="/pages/game/materials/restart.png" mode="aspectFit"></image>
+        </button>
+        <button class="complete-button next-button" bindtap="navigateToNextLevel">
+          <image class="button-image" src="/pages/game/materials/next_level.png" mode="aspectFit"></image>
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- Death screen -->
+  <view 
+    class="death-screen" 
+    wx:if="{{showDeathScreen}}" 
+    style="opacity: {{deathScreenOpacity}}"
+  >
+    <view class="death-content">
+      <text class="death-title">You failed...</text>
+      <text class="death-subtitle">try again</text>
+    </view>
+  </view>
+</view> 

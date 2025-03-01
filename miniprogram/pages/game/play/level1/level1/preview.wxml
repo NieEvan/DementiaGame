@@ -1,0 +1,3 @@
+<canvas type="2d" id="previewCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;" bindtouchstart="handleTouchStart" bindtouchmove="handleTouchMove"></canvas>
+<view class="countdown">{{countdown}}</view>
+<view wx:if="{{showTutorial}}" class="fullscreen-tap-area" bindtap="onContinue"></view> 

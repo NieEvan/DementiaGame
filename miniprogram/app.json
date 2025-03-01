@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/game/level-select/level-select",
+    "pages/tile-game/game",
+    "pages/insights/gamehistory"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/game/play",
+      "name": "gamelevels",
+      "pages": [
+        "level1/preview",
+        "level2/preview",
+        "level3/preview",
+        "level4/preview",
+        "level5/preview",
+        "level6/preview",
+        "level7/preview",
+        "level8/preview",
+        "level9/preview",
+        "level1/play",
+        "level2/play",
+        "level3/play",
+        "level4/play",
+        "level5/play",
+        "level6/play",
+        "level7/play",
+        "level8/play",
+        "level9/play"
+      ]
+    },
+    {
+      "root": "pages/game/sound",
+      "name": "gamesounds",
+      "pages": []
+    },
+    {
+      "root": "pages/game/materials/egypt",
+      "name": "egypttheme",
+      "pages": []
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Memory Training",
+    "navigationBarTextStyle": "black"
+  }
+}

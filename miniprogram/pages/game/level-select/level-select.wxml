@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="hero-section">
+    <text class="title">Maze game</text>
+    <view class="description-container" bindtap="toggleDescription">
+      <text class="description {{isDescriptionExpanded ? 'expanded' : ''}}">
+        The Maze Game tests your spatial navigation and memory abilities, cognitive aspects that are clinically proven to reflect Alzheimer's.
+      </text>
+      <text class="toggle-icon {{isDescriptionExpanded ? 'expanded' : ''}}"></text>
+    </view>
+  </view>
+
+  <text class="levels-heading">Choose your level</text>
+
+  <view class="level-grid">
+    <view 
+      wx:for="{{levels}}" 
+      wx:key="levelNumber"
+      class="level-block {{item.unlocked ? 'unlocked' : 'locked'}}"
+      data-level="{{item.levelNumber}}"
+      bindtap="onLevelSelect"
+    >
+      <text class="block-top">{{item.levelNumber}}</text>
+      
+      <!-- Stars below number -->
+      <view class="stars-container" wx:if="{{item.unlocked}}">
+        <view class="star {{item.stars >= 1 ? 'filled' : ''}}" />
+        <view class="star {{item.stars >= 2 ? 'filled' : ''}}" />
+        <view class="star {{item.stars >= 3 ? 'filled' : ''}}" />
+      </view>
+      
+      <view class="lock-icon" wx:if="{{!item.unlocked}}">🔒</view>
+    </view>
+  </view>
+</view> 

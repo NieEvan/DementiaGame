@@ -1,0 +1,54 @@
+<view class="container">
+  <view wx:if="{{isLoading}}" class="loading-overlay">
+    <view class="loading-spinner"></view>
+  </view>
+  
+  <view class="hero-section">
+    <text class="title">Hi, {{userName}}</text>
+  </view>
+  
+  <view class="content-section">
+    <text class="section-title">Games</text>
+    <scroll-view class="games-slider" scroll-x="true" enhanced="true" show-scrollbar="false">
+      <!-- Maze Game Card -->
+      <navigator url="/pages/game/level-select/level-select" class="game-card" style="background-color: #6b4de6;">
+        <view class="game-info">
+          <text class="game-title">Maze</text>
+          <text class="game-subtitle">Tap to play ⮞</text>
+        </view>
+      </navigator>
+
+      <!-- Tile Game Card -->
+      <navigator url="/pages/tile-game/game" class="game-card" style="background-color: #15b7d1;">
+        <view class="game-info">
+          <text class="game-title">Tile</text>
+          <text class="game-subtitle">Tap to play ⮞</text>
+        </view>
+      </navigator>
+
+      <!-- Coming Soon Cards -->
+      <view class="game-card coming-soon">
+        <view class="game-info">
+          <text class="game-title">In progress</text>
+          <text class="game-subtitle">Stay tuned!</text>
+        </view>
+      </view>
+
+    </scroll-view>
+
+    <text class="section-title">Insights</text>
+    <navigator url="/pages/insights/prediction" class="prediction-block">
+      <text class="alzheimer-pred-text">You chances of having Alzheimer's disease is...</text>
+      <text class="alzheimer-pred-result">{{alzheimerPred}}%</text>
+    </navigator>
+    
+    <view class="pentagon-container">
+      <canvas type="2d" id="pentagonCanvas" class="pentagon-canvas"></canvas>
+    </view>
+
+    <navigator url="/pages/insights/gamehistory" class="insights-block">
+      <image src="insights_black_icon.png" mode="aspectFit"></image>
+      <text>Progress</text>
+    </navigator>
+  </view>
+</view>

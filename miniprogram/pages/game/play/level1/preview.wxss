@@ -1,0 +1,36 @@
+.countdown {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+} 
+
+.preview-canvas {
+  scroll-x: false;
+  scroll-y: false;
+}
+
+.continue-button {
+  position: fixed;
+  bottom: 85px;  /* Adjust this value to match your bubble position */
+  right: 40px;   /* Adjust this value to match your bubble position */
+  color: transparent;  /* Make the text invisible since we're drawing it on canvas */
+  padding: 10px 20px;
+  width: 80px;
+  height: 30px;
+  text-align: right;
+  z-index: 1000;
+}
+
+.fullscreen-tap-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}

@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="header">
+    <text class="title">Performance History</text>
+  </view>
+
+  <view class="chart-container">
+    <canvas canvas-id="scoreChart" class="score-chart"></canvas>
+  </view>
+
+  <view class="history-list">
+    <block wx:if="{{gameHistory.length > 0}}">
+      <view wx:for="{{gameHistory}}" wx:key="_id" class="history-card">
+        <view class="card-main">
+          <view class="score-level">
+            <text class="score">{{item.score}}</text>
+            <text class="level">Level {{item.maxLevelReached}}</text>
+          </view>
+          <view class="times">
+            <block wx:for="{{item.levelTimes}}" wx:for-item="time" wx:key="index">
+              <text class="time-chip">L{{index + 1}}: {{time/1000}}s</text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    
+    <view wx:else class="no-history">
+      <text>No games played yet</text>
+      <text class="subtitle">Complete a game to see your history</text>
+    </view>
+  </view>
+</view>

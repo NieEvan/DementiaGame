@@ -1,0 +1,15 @@
+.countdown {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+} 
+
+.preview-canvas {
+  scroll-x: false;
+  scroll-y: false;
+}
