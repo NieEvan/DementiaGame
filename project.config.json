@@ -29,5 +29,6 @@
     "ignore": [],
     "include": []
   },
-  "simulatorPluginLibVersion": {}
+  "simulatorPluginLibVersion": {},
+  "appid": "wxdebff964febad32e"
 }

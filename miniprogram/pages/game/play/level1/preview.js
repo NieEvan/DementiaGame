@@ -246,11 +246,9 @@ Page({
       this.drawTutorial(ctx);
     }
 
-    ctx.restore();  // This restores from the maze transform
-
-    // Draw tutorial text and arrow if showing
+    // Draw countdown number at the bottom (outside of maze transform)
+    // Only draw countdown when tutorial is not showing
     if (!this.data.showTutorial) {
-      // Draw countdown number at the bottom (outside of maze transform)
       ctx.save();
       ctx.fillStyle = `rgba(255, 255, 255, ${this.data.countdownOpacity})`;
       ctx.font = 'bold 48px Arial';
@@ -262,7 +260,7 @@ Page({
           this.data.canvasHeight - 80
       );
       ctx.restore();
-      }
+    }
   },
 
   onUnload() {
